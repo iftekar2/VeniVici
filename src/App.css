@@ -3,40 +3,80 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://img.freepik.com/free-vector/seamless-pattern-tile-cartoon-with-cats_1308-74508.jpg?w=740&t=st=1678920121~exp=1678920721~hmac=6a7bb249d2221233ed79c738363a3a871e264dff5e413f1e7d3a675e5b502790);
+  height: 86vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App{
+  width: 120%;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  height: 80vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.randomButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  border-color: white;
+  border: solid;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover{
+  background-color: white;
+  color: black;
+}
+
+img{
+  height: 300px;
+  width: 300px;
+  border-radius: 15px;
+}
+
+@media screen and ( max-width: 925px) {
+  img{
+    height: 100px;
+    width: 100px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App{
+    height: 60vh;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.historySidebar{
+  position: absolute;
+  height: 80%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: black;
+  padding: 15px 15px 15px 10px;
+  margin-top: 5%;
+  display: flex;
+  overflow-y: scroll;
+  flex-direction: column;
+  align-items: center;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.sideImage{
+  height: 100px;
+  width: 100px;
 }

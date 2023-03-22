@@ -1,32 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import Axios from 'axios';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [catImage, setCatImage] = useState('');
+  const [prevImages, setPrevImages] = useState('');
+
+  const getCatImage = () =>{
+    Axios.get('https://api.thecatapi.com/v1/images/search').then((response) =>{
+      setCatImage(response.data[0].url);
+    });
+  };
+
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div className="App">
+        <h1>Cat-a-pix</h1>
+        <h3>Your daily dose of feline fun</h3>
+        <img src={catImage}></img>
+        <div className='randomButton'>
+          <button onClick={getCatImage}>
+          <i className="fa-solid fa-shuffle"></i>
+          <p>Discover</p>
+          </button>
+        </div>
+
+        <div className='historySidebar'>
+          <img className='sideImage' src={catImage}></img>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }
